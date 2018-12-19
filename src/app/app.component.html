@@ -1,1 +1,6 @@
-<app-file-reader></app-file-reader>
+<app-file-reader (onFileRead)="readContents($event)"></app-file-reader>
+<div>
+    <b *ngIf="fileContent">File Contents -</b>  
+    <br>
+    {{fileContent}}
+</div>

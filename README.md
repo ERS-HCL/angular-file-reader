@@ -9,12 +9,11 @@ Light weight file reader angular component without external libraries/dependenci
 Checkout the demo on StackBlitz - https://split-lap-stopwatch.stackblitz.io/ 
 
 ## Features
-
-`
+```
 1) Read contents of file from local system
-2) Apply validations to read only specific file types. Example - '.txt' or '.docx'
+2) Apply validations to read only specific file types. Example - '.txt' or any custom file extension
 3) Directly parse JSON data from using file-reader
-`
+```
 
 ## Adding the component in your project
 
@@ -37,7 +36,8 @@ declarations: [
 ```
 ### Dependencies
 None
-```
+
+
 ### timer.component.ts
 ``` typescript
 import { Component } from '@angular/core';

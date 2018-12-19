@@ -14,7 +14,7 @@ import { FileReaderComponent } from './file-reader/file-reader.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [FileReaderComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
