@@ -1,0 +1,22 @@
+.file-container{
+    text-align: center;
+  }
+.file-button{
+    outline: none;
+    cursor: pointer;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    background: #007bff;
+    color: #fff;
+    font-size: 15px;
+    padding: 10px;
+    margin: 5px 10px;
+    min-width: 100px;
+  }
+.file-button:hover{
+    background: #0069d9;
+    border: 1px solid #0062cc;
+  }
+#my_file{
+    display: none;
+  }
