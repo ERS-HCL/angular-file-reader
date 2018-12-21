@@ -25,7 +25,7 @@ export class FileReaderComponent {
       fileReader.readAsBinaryString(this.file);
     }
     else {
-      alert("Please choose a txt or doc file.");
+      alert("Please choose a .txt file.");
       this.tempFileData = '';
       this.onFileRead.emit(this.tempFileData);
     }

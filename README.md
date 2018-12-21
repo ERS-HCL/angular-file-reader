@@ -1,4 +1,4 @@
-# StopWatch
+# File Reader
 
 Light weight file reader angular component without external libraries/dependencies.
 
@@ -6,7 +6,7 @@ Light weight file reader angular component without external libraries/dependenci
 
 ## Demo
 
-Checkout the demo on StackBlitz - https://split-lap-stopwatch.stackblitz.io/ 
+Checkout the demo on StackBlitz - https://file-reader.stackblitz.io
 
 ## Features
 ```
@@ -38,7 +38,7 @@ declarations: [
 None
 
 
-### timer.component.ts
+### file-reader.component.ts
 ``` typescript
 import { Component } from '@angular/core';
 
@@ -76,7 +76,7 @@ export class FileReaderComponent {
 
 ```
 
-### timer.component.html
+### file-reader.component.html
 ``` typescript
 <div class="file-container">
   <button class="file-button" (click)="openProject()">Open File</button>
@@ -86,7 +86,7 @@ export class FileReaderComponent {
 {{tempFileData }}
 ```
 
-### timer.component.scss
+### file-reader.component.scss
 ``` typescript
 .file-container{
     text-align: center;
