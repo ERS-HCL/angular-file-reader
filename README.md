@@ -2,7 +2,7 @@
 
 Light weight file reader angular component without external libraries/dependencies.
 
-![alt text](img/stopwatch.png)
+![alt text](img/file-reader.png)
 
 ## Demo
 
