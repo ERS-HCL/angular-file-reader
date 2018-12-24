@@ -26,54 +26,53 @@ import { FileReaderComponent } from './file-reader/file-reader.component';
 Declaration
 `
 declarations: [
-    TimerComponent
+    FileReaderComponent
   ]
 `
 
 ### Add selector in HTML
 ```
-<app-file-reader></app-file-reader>
+<file-reader (onFileRead)="readContents($event)"></file-reader>
 ```
-### Dependencies
-None
 
+### Selector Events
+Event `onFileRead` will return the contents of the file selected by user.
 
 ### file-reader.component.ts
 ``` typescript
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-file-reader',
+  selector: 'file-reader',
   templateUrl: './file-reader.component.html',
   styleUrls: ['./file-reader.component.scss']
 })
 export class FileReaderComponent {
   file: any;
   tempFileData: any;
+  @Output() onFileRead:EventEmitter<any> = new EventEmitter();
   openProject() {
     document.getElementById('my_file').click();
   }
   fileSelection(event) {
     this.file = event.target.files[0];
     console.log(this.file.name);
-    console.log();
-    if (this.file.name.split('.').pop() == 'txt' ||
-      this.file.name.split('.').pop() == 'docx' ||
-      this.file.name.split('.').pop() == 'doc') {
+    //we can change these validations of file type as per our requirement
+    if (this.file.name.split('.').pop() == 'txt') {
       let fileReader = new FileReader();
       fileReader.onload = (e) => {
         this.tempFileData = fileReader.result;
-        console.log('Project Data from file', JSON.parse(this.tempFileData));
-        // alert("Success");
+        this.onFileRead.emit(this.tempFileData);
       }
       fileReader.readAsBinaryString(this.file);
     }
     else {
-      alert("Please choose a txt or doc file.");
+      alert("Please choose a .txt file.");
+      this.tempFileData = '';
+      this.onFileRead.emit(this.tempFileData);
     }
   }
 }
-
 ```
 
 ### file-reader.component.html
@@ -83,7 +82,6 @@ export class FileReaderComponent {
   <input type="file" id="my_file" (change)="fileSelection($event)" class="file_exp_opener">
   <br>
 </div>
-{{tempFileData }}
 ```
 
 ### file-reader.component.scss

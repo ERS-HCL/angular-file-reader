@@ -1,7 +1,7 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-file-reader',
+  selector: 'file-reader',
   templateUrl: './file-reader.component.html',
   styleUrls: ['./file-reader.component.scss']
 })
